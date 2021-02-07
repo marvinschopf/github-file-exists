@@ -4,13 +4,25 @@ export default async function exists(
 	owner: string,
 	repo: string,
 	path: string,
-	apiKey?: string
+	apiKey?: string,
+	username?: string
 ): Promise<boolean> {
 	let headers = {
 		Accept: "application/vnd.github.v3+json",
 		"User-Agent": "github-file-exists",
 	};
-	if (apiKey != null && apiKey.length >= 1) {
+	if (
+		apiKey != null &&
+		apiKey.length >= 1 &&
+		username != null &&
+		username.length >= 1
+	) {
+		headers["Authorization"] = `Basic ${username}:${apiKey}`;
+	} else if (
+		apiKey != null &&
+		apiKey.length >= 1 &&
+		(username == null || username.length === 0)
+	) {
 		headers["Authorization"] = `token ${apiKey}`;
 	}
 	const response: Response = await fetch(
