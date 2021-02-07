@@ -10,7 +10,7 @@ export default async function exists(
 		Accept: "application/vnd.github.v3+json",
 		"User-Agent": "github-file-exists",
 	};
-	if (apiKey) {
+	if (apiKey != null && apiKey.length >= 1) {
 		headers["Authorization"] = `token ${apiKey}`;
 	}
 	const response: Response = await fetch(
