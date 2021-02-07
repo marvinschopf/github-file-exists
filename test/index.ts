@@ -3,7 +3,16 @@ import test from "ava";
 import exists from "./../src/index";
 
 test("v8/v8/.gitignore", async function (t) {
-	t.is(await exists("v8", "v8", ".gitignore", process.env.GH_TOKEN), true);
+	t.is(
+		await exists(
+			"v8",
+			"v8",
+			".gitignore",
+			process.env.GH_TOKEN,
+			process.env.GH_USERNAME
+		),
+		true
+	);
 });
 
 test("v8/v8/{random}", async function (t) {
@@ -12,7 +21,8 @@ test("v8/v8/{random}", async function (t) {
 			"v8",
 			"v8",
 			randomBytes(36).toString("hex"),
-			process.env.GH_TOKEN
+			process.env.GH_TOKEN,
+			process.env.GH_USERNAME
 		),
 		false
 	);
@@ -24,7 +34,8 @@ test("{random}/{random}/{random}", async function (t) {
 			randomBytes(36).toString("hex"),
 			randomBytes(36).toString("hex"),
 			randomBytes(36).toString("hex"),
-			process.env.GH_TOKEN
+			process.env.GH_TOKEN,
+			process.env.GH_USERNAME
 		),
 		false
 	);
@@ -32,14 +43,26 @@ test("{random}/{random}/{random}", async function (t) {
 
 test("/v8//v8//.gitignore/", async function (t) {
 	t.is(
-		await exists("/v8/", "/v8/", "/.gitignore/", process.env.GH_TOKEN),
+		await exists(
+			"/v8/",
+			"/v8/",
+			"/.gitignore/",
+			process.env.GH_TOKEN,
+			process.env.GH_USERNAME
+		),
 		true
 	);
 });
 
 test("Jetbrains/swot/lib/domains", async function (t) {
 	t.is(
-		await exists("Jetbrains", "swot", "lib/domains", process.env.GH_TOKEN),
+		await exists(
+			"Jetbrains",
+			"swot",
+			"lib/domains",
+			process.env.GH_TOKEN,
+			process.env.GH_USERNAME
+		),
 		true
 	);
 });
@@ -50,7 +73,8 @@ test("Jetbrains/swot/lib/domains/net/eichendorffschule.txt", async function (t) 
 			"Jetbrains",
 			"swot",
 			"lib/domains/net/eichendorffschule.txt",
-			process.env.GH_TOKEN
+			process.env.GH_TOKEN,
+			process.env.GH_USERNAME
 		),
 		true
 	);
@@ -58,7 +82,13 @@ test("Jetbrains/swot/lib/domains/net/eichendorffschule.txt", async function (t) 
 
 test("Jetbrains/swot/lib/domains_", async function (t) {
 	t.is(
-		await exists("Jetbrains", "swot", "lib/domains_", process.env.GH_TOKEN),
+		await exists(
+			"Jetbrains",
+			"swot",
+			"lib/domains_",
+			process.env.GH_TOKEN,
+			process.env.GH_USERNAME
+		),
 		false
 	);
 });
