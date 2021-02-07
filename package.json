@@ -1,29 +1,29 @@
 {
-  "name": "github-file-exists",
-  "version": "1.0.0",
-  "main": "dist/index.js",
-  "repository": "https://github.com/marvinschopf/github-file-exists",
-  "author": {
-    "name": "Marvin Schopf",
-    "email": "marvin@schopf.biz",
-    "url": "https://www.marvinschopf.com"
-  },
-  "funding": "https://github.com/marvinschopf/github-file-exists?sponsor=1",
-  "license": "Apache-2.0",
-  "private": false,
-  "devDependencies": {
-    "@types/node": "^14.14.25",
-    "ava": "^3.15.0",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
-  },
-  "scripts": {
-    "build": "tsc"
-  },
-  "dependencies": {
-    "node-fetch": "^2.6.1"
-  },
-  "ava": {
+	"name": "github-file-exists",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"repository": "https://github.com/marvinschopf/github-file-exists",
+	"author": {
+		"name": "Marvin Schopf",
+		"email": "marvin@schopf.biz",
+		"url": "https://www.marvinschopf.com"
+	},
+	"funding": "https://github.com/marvinschopf/github-file-exists?sponsor=1",
+	"license": "Apache-2.0",
+	"private": false,
+	"devDependencies": {
+		"@types/node": "^14.14.25",
+		"ava": "^3.15.0",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.1.3"
+	},
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"node-fetch": "^2.6.1"
+	},
+	"ava": {
 		"extensions": [
 			"ts"
 		],
