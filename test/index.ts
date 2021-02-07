@@ -3,7 +3,7 @@ import test from "ava";
 import exists from "./../src/index";
 
 test("v8/v8/.gitignore", async function (t) {
-	t.is(await exists("v8", "v8", ".gitignore", process.env.GITHUB_TOKEN), true);
+	t.is(await exists("v8", "v8", ".gitignore"), true);
 });
 
 test("v8/v8/{random}", async function (t) {
@@ -11,8 +11,7 @@ test("v8/v8/{random}", async function (t) {
 		await exists(
 			"v8",
 			"v8",
-			randomBytes(36).toString("hex"),
-			process.env.GITHUB_TOKEN
+			randomBytes(36).toString("hex")
 		),
 		false
 	);
@@ -23,8 +22,7 @@ test("{random}/{random}/{random}", async function (t) {
 		await exists(
 			randomBytes(36).toString("hex"),
 			randomBytes(36).toString("hex"),
-			randomBytes(36).toString("hex"),
-			process.env.GITHUB_TOKEN
+			randomBytes(36).toString("hex")
 		),
 		false
 	);
@@ -32,14 +30,14 @@ test("{random}/{random}/{random}", async function (t) {
 
 test("/v8//v8//.gitignore/", async function (t) {
 	t.is(
-		await exists("/v8/", "/v8/", "/.gitignore/", process.env.GITHUB_TOKEN),
+		await exists("/v8/", "/v8/", "/.gitignore/"),
 		true
 	);
 });
 
 test("Jetbrains/swot/lib/domains", async function (t) {
 	t.is(
-		await exists("Jetbrains", "swot", "lib/domains", process.env.GITHUB_TOKEN),
+		await exists("Jetbrains", "swot", "lib/domains"),
 		true
 	);
 });
@@ -49,8 +47,7 @@ test("Jetbrains/swot/lib/domains/net/eichendorffschule.txt", async function (t) 
 		await exists(
 			"Jetbrains",
 			"swot",
-			"lib/domains/net/eichendorffschule.txt",
-			process.env.GITHUB_TOKEN
+			"lib/domains/net/eichendorffschule.txt"
 		),
 		true
 	);
@@ -58,7 +55,7 @@ test("Jetbrains/swot/lib/domains/net/eichendorffschule.txt", async function (t) 
 
 test("Jetbrains/swot/lib/domains_", async function (t) {
 	t.is(
-		await exists("Jetbrains", "swot", "lib/domains_", process.env.GITHUB_TOKEN),
+		await exists("Jetbrains", "swot", "lib/domains_"),
 		false
 	);
 });
