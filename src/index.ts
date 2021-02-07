@@ -20,7 +20,7 @@ export default async function exists(
 		}
 	);
 	const responseJson = await response.json();
-	if (response.status != 200 && response.status != 400) {
+	if (response.status != 200 && response.status != 404) {
 		if (responseJson.message) {
 			throw new Error(`Error: ${responseJson.message}`);
 		} else {
