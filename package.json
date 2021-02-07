@@ -2,6 +2,7 @@
 	"name": "github-file-exists",
 	"version": "1.0.0",
 	"main": "dist/index.js",
+  "types": "dist/index.d.ts",
 	"repository": "https://github.com/marvinschopf/github-file-exists",
 	"author": {
 		"name": "Marvin Schopf",
