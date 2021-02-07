@@ -14,7 +14,10 @@ export default async function exists(
 		headers["Authorization"] = `token ${apiKey ? apiKey : ""}`;
 	}
 	const response: Response = await fetch(
-		`https://api.github.com/repos/${owner}/${repo}/contents/${path}`,
+		`https://api.github.com/repos/${owner.replace(
+			/\/|\\/gm,
+			""
+		)}/${repo.replace(/\/|\\/gm, "")}/contents/${path}`,
 		{
 			headers: headers,
 		}
