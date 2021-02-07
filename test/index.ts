@@ -46,11 +46,19 @@ test("Jetbrains/swot/lib/domains", async function (t) {
 
 test("Jetbrains/swot/lib/domains/net/eichendorffschule.txt", async function (t) {
 	t.is(
-		await exists("Jetbrains", "swot", "lib/domains/net/eichendorffschule.txt"),
+		await exists(
+			"Jetbrains",
+			"swot",
+			"lib/domains/net/eichendorffschule.txt",
+			process.env.GITHUB_TOKEN
+		),
 		true
 	);
 });
 
 test("Jetbrains/swot/lib/domains_", async function (t) {
-	t.is(await exists("Jetbrains", "swot", "lib/domains_"), false);
+	t.is(
+		await exists("Jetbrains", "swot", "lib/domains_", process.env.GITHUB_TOKEN),
+		false
+	);
 });
