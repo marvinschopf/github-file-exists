@@ -21,12 +21,10 @@
 
 import fetch from "node-fetch";
 
-export default async function exists(
-	owner: string,
+export = async (owner: string,
 	repo: string,
 	path: string,
-	apiKey?: string
-): Promise<boolean> {
+	apiKey?: string): Promise<boolean> => {
 	let headers = {
 		Accept: "application/vnd.github.v3+json",
 		"User-Agent": "github-file-exists",

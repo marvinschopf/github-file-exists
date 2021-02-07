@@ -21,7 +21,7 @@ yarn add github-file-exists
 Using promises:
 
 ```javascript
-const githubFileExists = require("github-file-exists").default;
+const githubFileExists = require("github-file-exists");
 
 githubFileExists("marvinschopf", "file-exists", ".gitignore").then(
 	(fileExists) => {
@@ -37,7 +37,7 @@ githubFileExists("marvinschopf", "file-exists", ".gitignore").then(
 Using `async / await`:
 
 ```javascript
-const githubFileExists = require("github-file-exists").default;
+const githubFileExists = require("github-file-exists");
 
 const fileExists = await githubFileExists(
 	"marvinschopf",
@@ -54,7 +54,7 @@ if (fileExists) {
 Using ES6 `import`:
 
 ```javascript
-import { exists } from "github-file-exists";
+import exists from "github-file-exists";
 
 const fileExists = await exists("marvinschopf", "file-exists", ".gitignore");
 
