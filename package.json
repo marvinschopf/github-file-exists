@@ -19,5 +19,7 @@
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
 }
