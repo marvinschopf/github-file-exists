@@ -11,7 +11,7 @@ export default async function exists(
 		"User-Agent": "github-file-exists",
 	};
 	if (apiKey) {
-		headers["Authorization"] = `token ${apiKey ? apiKey : ""}`;
+		headers["Authorization"] = `token ${apiKey}`;
 	}
 	const response: Response = await fetch(
 		`https://api.github.com/repos/${owner.replace(
